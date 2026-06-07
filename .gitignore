@@ -1,0 +1,13 @@
+# Data
+*.parquet
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.idea/
