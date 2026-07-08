@@ -2,3 +2,6 @@ pandas
 numpy
 matplotlib
 pyarrow
+scikit-learn
+xgboost
+torch

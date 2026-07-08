@@ -1,14 +1,22 @@
-Peptide Fragment Intensity Prediction
+# Peptide Fragment Intensity Prediction
 
-Predicting ECD fragment ion intensities from peptide sequence features using machine learning.
+Predicting ECD fragment ion intensities from peptide sequence features.
 
-Developed as part of TUM's Problem-Based Learning course (Bioinformatics B.Sc) 
+Developed for TUM's Problem-Based Learning course (Bioinformatics B.Sc.).
 
-work in progress, current state: EDA complete, model has enzyme stratification, 0-filling to prevent false positives, normalized metrics,  improvement ongoing
+## Notebooks
+- `01-EDA.ipynb` — distributions, missing values, feature correlation
+- `02-baseline.ipynb` — Random Forest / XGBoost, with a random-uniform dummy as a floor
+- `03-embedding.ipynb` — PyTorch model with learned amino-acid embeddings
 
-EDA: distribution analysis, missing value handling, feature correlation
+## Features
+Ion type, fragment number, charge, peptide length, relative position, enzyme, and local residue window.
 
-features: ion type, fragment number, charge, peptide length, relative position, enzymes, and local residue context
+## Evaluation
+Per-spectrum spectral angle and Pearson correlation (`src/metrics.py`). Split by peptide, stratified by enzyme; unobserved fragments are zero-filled.
 
-architecture: random forest regressor / XGboost
+## Status
+Work in progress.
 
+## Data
+Reads `data_for_student.parquet` and `metadata_for_student.parquet` (not tracked in git).
